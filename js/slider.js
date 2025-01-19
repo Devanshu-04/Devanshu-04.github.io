@@ -1,3 +1,6 @@
+
+// logic of loading the slider
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
@@ -43,3 +46,19 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+// Onboarding message when page first loads
+document.addEventListener("DOMContentLoaded", () => {
+  const onboardingMessage = document.getElementById("onboardingMessage");
+  const slider = document.getElementById("imageSlider");
+
+  onboardingMessage.classList.add("show");
+
+  const hideOnboardingMessage = () => onboardingMessage.classList.remove("show");
+
+  slider.addEventListener("mousedown", hideOnboardingMessage);
+  slider.addEventListener("touchstart", hideOnboardingMessage);
+
+  setTimeout(hideOnboardingMessage, 2000);
+});
