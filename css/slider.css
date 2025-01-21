@@ -78,7 +78,7 @@ body.menu-toggled > .meta-link > span {
 
 .onboarding-message {
   position: absolute;
-  top: 10%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(25, 25, 25, 0.7);
