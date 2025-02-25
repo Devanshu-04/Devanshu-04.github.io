@@ -95,3 +95,44 @@ body.menu-toggled > .meta-link > span {
   opacity: 1;
   visibility: visible;
 }
+
+/* Slider-specific styles */
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none; /* Prevent image highlighting */
+}
+
+#image-track > a {
+  display: inline-block; /* Make <a> tags behave like block elements */
+  text-decoration: none; /* Remove underline from links */
+  outline: none; /* Remove outline on focus */
+  border: none; /* Remove any default border */
+  position: relative;
+}
+
+#image-track > a > .image {
+  width: 40vmin; /* Set image width */
+  height: 56vmin; /* Set image height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  object-position: center; /* Center the image within the container */
+}
+
+#image-track > a > .title {
+  position: absolute; /* Position the title relative to the <a> tag */
+  bottom: -5.5rem; /* Adjust this value to position the title below the image */
+  left: 50%; /* Center the title horizontally */
+  transform: translateX(-50%); /* Center the title horizontally */
+  color: white; /* Title text color */
+  font-size: 3vmin; /* Adjust font size relative to the viewport */
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 0.5rem 1rem; /* Add padding for better readability */
+  border-radius: 0.5rem; /* Rounded corners */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
